@@ -18,8 +18,8 @@ function App(){
           <Route index path='/' element={<Home />} />
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/information' element={<Information />} />
-          <Route path='/payment' element={<Payment />} />
-          <Route path='/success' element={<Success />} />
+          <Route path='/checkout/payment' element={<Payment />} />
+          <Route path='/checkout/success' element={<Success />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Layout>
