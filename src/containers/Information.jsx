@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+import '../styles/components/Information.css';
+
 
 function Information() {
   return (
-    <div>Information</div>
+    <h1>Information</h1>
   )
 }
 

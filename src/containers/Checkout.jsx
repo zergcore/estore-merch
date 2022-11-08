@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import '../styles/components/Checkout.css';
 
 function Checkout() {
   return (
-    <div>Checkout</div>
+    <h1>Checkout</h1>
   )
 }
 

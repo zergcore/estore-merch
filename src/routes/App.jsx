@@ -7,19 +7,22 @@ import Information from '../containers/Information'
 import Payment from '../containers/Payment'
 import Success from '../containers/Success'
 import NotFound from '../containers/NotFound'
+import Layout from '../components/Layout';
 
 
 function App(){
   return (
     <BrowserRouter>
-      <Routes>
-        <Route index path='/' element={<Home />} />
-        <Route path='/checkout' element={<Checkout />} />
-        <Route path='/information' element={<Information />} />
-        <Route path='/payment' element={<Payment />} />
-        <Route path='/success' element={<Success />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route index path='/' element={<Home />} />
+          <Route path='/checkout' element={<Checkout />} />
+          <Route path='/information' element={<Information />} />
+          <Route path='/payment' element={<Payment />} />
+          <Route path='/success' element={<Success />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </Layout>
     </BrowserRouter>
   )
 }

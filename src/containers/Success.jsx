@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import '../styles/components/Success.css';
 
 function Success() {
   return (
-    <div>Success</div>
+    <h1>Success</h1>
   )
 }
 
