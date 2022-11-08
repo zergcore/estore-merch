@@ -3,23 +3,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/index.js', //archivo principal
+  entry: './src/index.js',
   output: {
-    //Salida de la compilacion
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'main.js',
     publicPath: '/',
   },
   mode: 'development',
   resolve: {
-    //Extensiones que escucha
     extensions: ['.js', '.jsx'],
   },
+
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        exclude: /node-modules/,
         use: {
           loader: 'babel-loader',
         },
@@ -33,18 +32,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.(css|scss)$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          'css-loader',
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        type: 'asset',
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
   },
@@ -54,15 +43,14 @@ module.exports = {
       filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: 'assets/[name].css',
     }),
   ],
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
+    static: path.join(__dirname, 'public'),
     compress: true,
     port: 3005,
     historyApiFallback: true,
+    open:true,
   },
 };
