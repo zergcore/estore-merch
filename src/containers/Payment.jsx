@@ -7,7 +7,9 @@ function Payment() {
       <div className="Payment-content">
         <h3>Resumen del pedido:</h3>
         <div className="Payment-button">
-          Boton de pago con Paypal
+          <button type='button'>
+            <i className="fa-brands fa-cc-paypal"/>
+          </button>
         </div>
       </div>
       <div />
