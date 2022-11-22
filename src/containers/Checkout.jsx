@@ -16,7 +16,9 @@ function Checkout() {
             </h4>
             <span>$10</span>
           </div>
-          <button type='button'><i className="fa-solid fa-trash"/></button>
+          <button type='button'>
+            <i className="fa-solid fa-trash"/>
+          </button>
         </div>
       </div>
       <div className="Checkout-sidebar">
