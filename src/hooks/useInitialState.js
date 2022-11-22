@@ -27,10 +27,26 @@ const useInitialState = () =>{
         })
     }
 
+    const handleSumTotal = () => {
+        const {cart} = state
+        const reducer = (accummulator, currentValue) => accummulator + currentValue.price
+        const sum = cart.reduce(reducer, 0);
+        return sum
+    }
+
+    const addNewOrder = payload =>{
+        setState({
+            ...state,
+            orders:[...state.orders, payload]
+        })
+    }
+
     return {
         addToCart,
         removeFromCart,
         addToBuyer,
+        handleSumTotal,
+        addNewOrder,
         state
     }
 
